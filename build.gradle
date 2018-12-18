@@ -16,7 +16,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 group = "p455w0rd.sbm.ccb"
-version = "1.12.2-" + getVersion()
+version = "1.12.2-1.0.0"
 archivesBaseName = "CharcoalBlock"
 sourceCompatibility = targetCompatibility = "1.8"
 
@@ -39,24 +39,4 @@ processResources {
 	from (sourceSets.main.resources.srcDirs) {
 		exclude "mcmod.info"
 	}
-}
-
-String getVersion() {
-	String major = "0";
-	String revision = "0";
-	String patch = "0";
-	String prefix = "public static final String VERSION = \"";
-	File file = file("src/main/java/p455w0rd/sbm/ccb/init/ModGlobals.java")
-	file.eachLine { String s ->
-		s = s.trim();
-		if (s.startsWith(prefix)) {
-			s = s.substring(prefix.length(), s.length() - 2);
-			String[] pts = s.split("\\.");
-
-			major = pts[0];
-			revision = pts[1];
-			patch = pts[2];
-		}
-	}
-	return "$major.$revision.$patch";
 }
