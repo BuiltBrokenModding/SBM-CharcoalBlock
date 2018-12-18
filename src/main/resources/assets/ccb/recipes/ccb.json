@@ -1,0 +1,17 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"aaa",
+		"aaa",
+		"aaa"
+	],
+	"key": {
+		"a": {
+			"item": "minecraft:coal",
+			"data": 1
+		}
+	},
+	"result": {
+		"item": "ccb:charcoal_block"
+	}
+}
