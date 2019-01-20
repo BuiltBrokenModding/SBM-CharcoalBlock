@@ -14,3 +14,5 @@ build
 hs_err_pid*
 
 maven.bat
+
+*.iws
