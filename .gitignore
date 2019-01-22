@@ -16,3 +16,11 @@ hs_err_pid*
 maven.bat
 
 *.iws
+
+output/
+
+CompiledWith\.txt
+
+changelog\.html
+
+SBM-Charcoal-Block\.txt
