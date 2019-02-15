@@ -1,3 +1,5 @@
-##Charcoal Block FR France Localizations
+{
+    "_comment": "#Charcoal Block FR France Localizations",
 
-tile.sbmcharcoalblock:charcoal_block.name=Bloc de charbon de bois
+    "block.sbmcharcoalblock.charcoal_block": "Bloc de charbon de bois"
+}

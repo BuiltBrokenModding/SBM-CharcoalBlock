@@ -1,5 +1,5 @@
 {
-	"type": "forge:ore_shaped",
+	"type": "crafting_shaped",
 	"pattern": [
 		"aaa",
 		"aaa",
@@ -7,8 +7,7 @@
 	],
 	"key": {
 		"a": {
-			"item": "minecraft:coal",
-			"data": 1
+			"item": "minecraft:charcoal"
 		}
 	},
 	"result": {

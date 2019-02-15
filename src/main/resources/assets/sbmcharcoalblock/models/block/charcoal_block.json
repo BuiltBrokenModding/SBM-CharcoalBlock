@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "sbmcharcoalblock:blocks/charcoal_block"
+        "all": "sbmcharcoalblock:block/charcoal_block"
     }
 }
