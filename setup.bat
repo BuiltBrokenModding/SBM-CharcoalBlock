@@ -1,1 +1,1 @@
-gradlew clean prepareRun IDEA --refresh-dependencies
+gradlew clean IDEA --refresh-dependencies

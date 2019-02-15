@@ -1,0 +1,25 @@
+modLoader="javafml" #mandatory
+loaderVersion="[25,)" #mandatory
+issueTrackerURL="http://github.com/bl4ckscor3/Sit/issues"
+displayURL="http://minecraft.curseforge.com/projects/sit"
+authors="TheRealp455w0rd"
+
+[[mods]] #mandatory
+modId="sbmcharcoalblock" #mandatory
+version="v1.0.0" #mandatory
+displayName="SBM-Charcoal Block" #mandatory
+description='''Just adds a charcoal block''' #mandatory
+
+[[dependencies.sbmcharcoalblock]]
+    modId="forge"
+    mandatory=true
+    versionRange="[25,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.sbmcharcoalblock]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.13.2]"
+    ordering="NONE"
+    side="BOTH"

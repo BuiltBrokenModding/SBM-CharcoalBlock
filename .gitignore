@@ -24,3 +24,11 @@ CompiledWith\.txt
 changelog\.html
 
 SBM-Charcoal-Block\.txt
+
+\.DS_Store
+
+out/
+
+*.iml
+
+*.ipr
