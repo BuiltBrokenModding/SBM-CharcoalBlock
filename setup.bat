@@ -1,1 +1,1 @@
-gradlew clean IDEA --refresh-dependencies
+gradlew genIntellijRuns
