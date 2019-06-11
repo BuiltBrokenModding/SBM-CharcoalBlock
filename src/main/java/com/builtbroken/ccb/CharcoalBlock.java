@@ -4,8 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -39,7 +39,7 @@ public class CharcoalBlock
             .sound(SoundType.STONE))
             .setRegistryName(CHARCOAL_BLOCK_REGISTRYNAME);
 
-    public static final Item CHARCOAL_ITEMBLOCK = new ItemBlock(CHARCOAL_BLOCK, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
+    public static final Item CHARCOAL_ITEMBLOCK = new BlockItem(CHARCOAL_BLOCK, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
     {
         @Override
         public int getBurnTime(ItemStack itemBlock)
