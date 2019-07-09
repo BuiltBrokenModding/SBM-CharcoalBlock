@@ -13,7 +13,7 @@ apply plugin: 'eclipse'
 
 version = '1.0.0'
 group = 'sbm-charcoalblock'
-archivesBaseName = 'SBM-CharcoalBlock'
+archivesBaseName = 'SBM-CharcoalBlock-1.14.3'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
