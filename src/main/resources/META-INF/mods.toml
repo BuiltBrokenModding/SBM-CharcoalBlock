@@ -3,7 +3,7 @@ loaderVersion="[33,)" #mandatory
 issueTrackerURL="https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/issues"
 displayURL="http://curseforge.com/minecraft/mc-mods/sbm-charcoal-block"
 authors="TheRealp455w0rd, DarkCow, bl4ckscor3"
-license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blob/1.16/LICENSE
+license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blob/1.16/LICENSE"
 
 [[mods]] #mandatory
 modId="sbmcharcoalblock" #mandatory

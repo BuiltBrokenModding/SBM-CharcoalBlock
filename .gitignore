@@ -9,28 +9,17 @@ build
 *.launch
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-
 maven.bat
-
 *.iws
-
 output/
-
 CompiledWith\.txt
-
 changelog\.html
-
 SBM-Charcoal-Block\.txt
-
 \.DS_Store
-
 out/
-
 *.iml
-
 *.ipr
-
 \.idea/
+/logs
