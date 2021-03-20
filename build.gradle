@@ -11,14 +11,14 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 
-version = '1.0.0'
+version = '1.1.0'
 group = 'sbm-charcoalblock'
-archivesBaseName = 'SBM-CharcoalBlock-1.16.2'
+archivesBaseName = 'SBM-CharcoalBlock-1.16.5'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 minecraft {
-    mappings channel: 'snapshot', version: '20200723-1.16.1'
+    mappings channel: 'snapshot', version: '20210309-1.16.4'
 	
     runs {
         client {
@@ -46,16 +46,16 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.2-33.0.0'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.1.0'
 }
 
 jar {
     manifest {
         attributes(["Specification-Title": "SBM-CharcoalBlock",
                     "Specification-Vendor": "Built Broken Modding",
-                    "Specification-Version": "v1.0.0",
+                    "Specification-Version": "v1.1.0",
                     "Implementation-Title": "SBM-CharcoalBlock",
-                    "Implementation-Version": "v1.0.0",
+                    "Implementation-Version": "v1.1.0",
                     "Implementation-Vendor" :"Built Broken Modding",
                     "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")],)
     }
