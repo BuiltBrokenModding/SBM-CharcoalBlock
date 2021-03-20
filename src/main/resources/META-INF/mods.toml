@@ -6,7 +6,7 @@ authors="TheRealp455w0rd"
 
 [[mods]] #mandatory
 modId="sbmcharcoalblock" #mandatory
-version="v1.0.0" #mandatory
+version="v1.1.0" #mandatory
 displayName="SBM-Charcoal Block" #mandatory
 description='''Just adds a charcoal block''' #mandatory
 
