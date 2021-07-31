@@ -1,19 +1,24 @@
 package com.builtbroken.ccb;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import javax.annotation.Nullable;
 
 @EventBusSubscriber(modid = CharcoalBlock.MODID, bus = Bus.MOD)
 @Mod(CharcoalBlock.MODID)
@@ -23,29 +28,26 @@ public class CharcoalBlock
     private static final ResourceLocation CHARCOAL_BLOCK_REGISTRYNAME = new ResourceLocation(CharcoalBlock.MODID, "charcoal_block");
 
     @SubscribeEvent
-    public static void onItemRegistryReady(RegistryEvent.Register<Item> event)
+    public static void onBlockRegistryReady(RegistryEvent.Register<Block> event)
     {
-        event.getRegistry().register(CHARCOAL_ITEMBLOCK);
+        event.getRegistry().register(new Block(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)
+                .strength(5.0F, 10.0F)
+                .sound(SoundType.STONE))
+                .setRegistryName(CHARCOAL_BLOCK_REGISTRYNAME));
     }
 
     @SubscribeEvent
-    public static void onBlockRegistryReady(RegistryEvent.Register<Block> event)
+    public static void onItemRegistryReady(RegistryEvent.Register<Item> event)
     {
-        event.getRegistry().register(CHARCOAL_BLOCK);
-    }
-
-    public static final Block CHARCOAL_BLOCK = new Block(Block.Properties.create(Material.ROCK, MaterialColor.BLACK)
-            .hardnessAndResistance(5.0F, 10.0F)
-            .sound(SoundType.STONE))
-            .setRegistryName(CHARCOAL_BLOCK_REGISTRYNAME);
-
-    public static final Item CHARCOAL_ITEMBLOCK = new BlockItem(CHARCOAL_BLOCK, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS))
-    {
-        @Override
-        public int getBurnTime(ItemStack itemBlock)
+        final Block block = ForgeRegistries.BLOCKS.getValue(CHARCOAL_BLOCK_REGISTRYNAME);
+        event.getRegistry().register(new BlockItem(block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS))
         {
-            return 16000;
-        }
+            @Override
+            public int getBurnTime(ItemStack itemBlock, @Nullable RecipeType<?> recipeType)
+            {
+                return 16000;
+            }
 
-    }.setRegistryName(CHARCOAL_BLOCK_REGISTRYNAME);
+        }.setRegistryName(CHARCOAL_BLOCK_REGISTRYNAME));
+    }
 }

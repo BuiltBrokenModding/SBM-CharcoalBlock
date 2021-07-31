@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[33,)" #mandatory
+loaderVersion="[37,)" #mandatory
 issueTrackerURL="https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/issues"
 displayURL="http://curseforge.com/minecraft/mc-mods/sbm-charcoal-block"
 authors="TheRealp455w0rd, DarkCow, bl4ckscor3"
@@ -7,20 +7,20 @@ license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blo
 
 [[mods]] #mandatory
 modId="sbmcharcoalblock" #mandatory
-version="v1.1.0" #mandatory
+version="1.1.0" #mandatory
 displayName="SBM-Charcoal Block" #mandatory
 description='''Just adds a charcoal block''' #mandatory
 
 [[dependencies.sbmcharcoalblock]]
     modId="forge"
     mandatory=true
-    versionRange="[33,)"
+    versionRange="[37,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.sbmcharcoalblock]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16,1.17)"
+    versionRange="[1.17.1,1.18)"
     ordering="NONE"
     side="BOTH"
