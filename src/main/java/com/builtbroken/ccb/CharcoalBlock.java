@@ -1,6 +1,8 @@
 package com.builtbroken.ccb;
 
 
+import javax.annotation.Nullable;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,8 +20,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
-
 @EventBusSubscriber(modid = CharcoalBlock.MODID, bus = Bus.MOD)
 @Mod(CharcoalBlock.MODID)
 public class CharcoalBlock
@@ -32,7 +32,8 @@ public class CharcoalBlock
     {
         event.getRegistry().register(new Block(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)
                 .strength(5.0F, 10.0F)
-                .sound(SoundType.STONE))
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops())
                 .setRegistryName(CHARCOAL_BLOCK_REGISTRYNAME));
     }
 
