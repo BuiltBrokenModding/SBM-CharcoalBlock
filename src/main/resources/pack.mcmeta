@@ -1,7 +1,6 @@
 {
   "pack": {
     "description": "Resources & data used for the Charcoal Block mod",
-        "pack_format": 12,
-        "forge:data_pack_format": 10
+        "pack_format": 15
   }
 }
