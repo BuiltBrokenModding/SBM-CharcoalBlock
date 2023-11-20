@@ -1,6 +1,5 @@
 package com.builtbroken.ccb;
 
-
 import javax.annotation.Nullable;
 
 import net.minecraft.world.item.BlockItem;
@@ -13,29 +12,29 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.common.Mod.EventBusSubscriber.Bus;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 @EventBusSubscriber(modid = CharcoalBlock.MODID, bus = Bus.MOD)
 @Mod(CharcoalBlock.MODID)
 public class CharcoalBlock
 {
 	public static final String MODID = "sbmcharcoalblock";
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-	public static final RegistryObject<Block> CHARCOAL_BLOCK = BLOCKS.register("charcoal_block", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_BLACK)
+	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
+	public static final DeferredBlock<Block> CHARCOAL_BLOCK = BLOCKS.registerBlock("charcoal_block", Block.Properties.of()
+			.mapColor(MapColor.COLOR_BLACK)
 			.strength(5.0F, 10.0F)
 			.sound(SoundType.STONE)
-			.requiresCorrectToolForDrops()));
-	public static final RegistryObject<Item> CHARCOAL_BLOCK_ITEM = ITEMS.register("charcoal_block", () -> new BlockItem(CHARCOAL_BLOCK.get(), new Item.Properties())
+			.requiresCorrectToolForDrops());
+	public static final DeferredItem<BlockItem> CHARCOAL_BLOCK_ITEM = ITEMS.register("charcoal_block", () -> new BlockItem(CHARCOAL_BLOCK.get(), new Item.Properties())
 	{
 		@Override
 		public int getBurnTime(ItemStack itemBlock, @Nullable RecipeType<?> recipeType)
@@ -44,10 +43,8 @@ public class CharcoalBlock
 		}
 	});
 
-	public CharcoalBlock()
+	public CharcoalBlock(IEventBus modEventBus)
 	{
-		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
 		BLOCKS.register(modEventBus);
 		ITEMS.register(modEventBus);
 	}

@@ -1,6 +1,14 @@
 {
   "pack": {
-    "description": "Resources & data used for the Charcoal Block mod",
-        "pack_format": 15
+    "description": {
+      "text": "Resources & data used for the Charcoal Block mod"
+    },
+    "neoforge": {
+      "versions": {
+        "client_resources": 18,
+        "server_data": 18
+      }
+    },
+    "pack_format": 18
   }
 }
