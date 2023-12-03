@@ -29,7 +29,7 @@ public class CharcoalBlock
 	public static final String MODID = "sbmcharcoalblock";
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-	public static final DeferredBlock<Block> CHARCOAL_BLOCK = BLOCKS.registerBlock("charcoal_block", Block.Properties.of()
+	public static final DeferredBlock<Block> CHARCOAL_BLOCK = BLOCKS.registerSimpleBlock("charcoal_block", Block.Properties.of()
 			.mapColor(MapColor.COLOR_BLACK)
 			.strength(5.0F, 10.0F)
 			.sound(SoundType.STONE)
