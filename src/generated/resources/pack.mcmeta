@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Resources & data used for the Charcoal Block mod",
+    "pack_format": 32,
+    "supported_formats": [
+      0,
+      2147483647
+    ]
+  }
+}

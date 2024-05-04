@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[1,)"
 issueTrackerURL="https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/issues"
-license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blob/1.20.2/LICENSE"
+license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blob/1.20.6/LICENSE"
 
 [[mods]]
 	modId="sbmcharcoalblock"
@@ -13,14 +13,14 @@ license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blo
 
 [[dependencies.sbmcharcoalblock]]
     modId="neoforge"
-    mandatory=true
-    versionRange="[20.2.64-beta,)"
+    type="required"
+    versionRange="[20.6-beta,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.sbmcharcoalblock]]
     modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.2,1.21)"
+    type="required"
+    versionRange="[1.20.6,1.21)"
     ordering="NONE"
     side="BOTH"
