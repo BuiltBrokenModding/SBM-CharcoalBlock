@@ -47,8 +47,8 @@ public class CharcoalBlock
             return 16000;
         }
     });
-    public static final TagKey<Block> BLOCK_TAG = BlockTags.create(new ResourceLocation(MODID, NAME));
-    public static final TagKey<Item> ITEM_TAG = ItemTags.create(new ResourceLocation(MODID, NAME));
+    public static final TagKey<Block> BLOCK_TAG = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MODID, NAME));
+    public static final TagKey<Item> ITEM_TAG = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MODID, NAME));
 
     public CharcoalBlock(IEventBus modEventBus)
     {
