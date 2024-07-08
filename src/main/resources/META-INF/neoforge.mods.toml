@@ -14,7 +14,7 @@ license="MIT License https://github.com/BuiltBrokenModding/SBM-CharcoalBlock/blo
 [[dependencies.sbmcharcoalblock]]
     modId="neoforge"
     type="required"
-    versionRange="[21,)"
+    versionRange="[21.0.76-beta,)"
     ordering="NONE"
     side="BOTH"
 

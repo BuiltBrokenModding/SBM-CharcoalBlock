@@ -60,6 +60,6 @@ public class CharcoalBlock
     public static void onCreativeModeTabBuildContents(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.getEntries().putAfter(new ItemStack(Blocks.COAL_BLOCK), new ItemStack(CHARCOAL_BLOCK_ITEM.get()), TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(new ItemStack(Blocks.COAL_BLOCK), new ItemStack(CHARCOAL_BLOCK_ITEM.get()), TabVisibility.PARENT_AND_SEARCH_TABS);
     }
 }
