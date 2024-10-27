@@ -12,12 +12,28 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 
 public class RecipeGenerator extends RecipeProvider {
-    public RecipeGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(output, lookupProvider);
+    public RecipeGenerator(HolderLookup.Provider lookupProvider, RecipeOutput output) {
+        super(lookupProvider, output);
     }
 
     @Override
-    protected final void buildRecipes(RecipeOutput recipeOutput) {
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CharcoalBlock.CHARCOAL_BLOCK_ITEM);
+    protected final void buildRecipes() {
+        nineBlockStorageRecipes(RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CharcoalBlock.CHARCOAL_BLOCK_ITEM);
+    }
+
+    public static final class Runner extends RecipeProvider.Runner {
+        public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+            super(output, lookupProvider);
+        }
+
+        @Override
+        protected RecipeProvider createRecipeProvider(HolderLookup.Provider lookupProvider, RecipeOutput output) {
+            return new RecipeGenerator(lookupProvider, output);
+        }
+
+        @Override
+        public String getName() {
+            return "Charcoal Block recipes";
+        }
     }
 }

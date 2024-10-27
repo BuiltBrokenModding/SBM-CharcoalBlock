@@ -38,7 +38,7 @@ public class DataGenRegistrar {
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new ItemTagGenerator(output, lookupProvider, blockTags.contentsGetter(), event.getExistingFileHelper()));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(new SubProviderEntry(BlockLootTableGenerator::new, LootContextParamSets.BLOCK)), lookupProvider));
-        generator.addProvider(event.includeServer(), new RecipeGenerator(output, lookupProvider));
+        generator.addProvider(event.includeServer(), new RecipeGenerator.Runner(output, lookupProvider));
         //@formatter:off
         generator.addProvider(true, new PackMetadataGenerator(output)
                 .add(PackMetadataSection.TYPE, new PackMetadataSection(Component.literal("Resources & data used for the Charcoal Block mod"),

@@ -15,6 +15,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.FuelValues;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -39,10 +40,10 @@ public class CharcoalBlock
             .strength(5.0F, 10.0F)
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops());
-    public static final DeferredItem<BlockItem> CHARCOAL_BLOCK_ITEM = ITEMS.register(NAME, () -> new BlockItem(CHARCOAL_BLOCK.get(), new Item.Properties())
+    public static final DeferredItem<BlockItem> CHARCOAL_BLOCK_ITEM = ITEMS.registerItem(NAME, p -> new BlockItem(CHARCOAL_BLOCK.get(), p.useBlockDescriptionPrefix())
     {
         @Override
-        public int getBurnTime(ItemStack itemBlock, @Nullable RecipeType<?> recipeType)
+        public int getBurnTime(ItemStack itemBlock, @Nullable RecipeType<?> recipeType, FuelValues fuelValues)
         {
             return 16000;
         }
