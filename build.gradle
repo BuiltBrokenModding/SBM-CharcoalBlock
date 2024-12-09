@@ -9,7 +9,7 @@ version = '1.1.2'
 group = 'sbm-charcoalblock'
 
 base {
-	archivesName = 'SBM-CharcoalBlock-1.21.3'
+	archivesName = 'SBM-CharcoalBlock-1.21.4'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -37,14 +37,14 @@ runs {
 		argument '-nogui'
 	}
 
-    data {
+    clientData {
 		workingDirectory project.file('run/data')
 		arguments.addAll '--mod', 'sbmcharcoalblock', '--all', '--output', file('src/generated/resources/').getAbsolutePath()
 	}
 }
 
 dependencies {
-	implementation 'net.neoforged:neoforge:21.3.4-beta'
+	implementation 'net.neoforged:neoforge:21.4.12-beta'
 }
 
 tasks.named('jar', Jar).configure {
