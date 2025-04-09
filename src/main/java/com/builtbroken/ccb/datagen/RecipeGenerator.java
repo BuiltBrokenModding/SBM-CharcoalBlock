@@ -18,6 +18,10 @@ public class RecipeGenerator extends RecipeProvider {
 
     @Override
     protected final void buildRecipes(RecipeOutput recipeOutput) {
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CharcoalBlock.CHARCOAL_BLOCK_ITEM);
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CharcoalBlock.CHARCOAL_BLOCK_ITEM,
+                CharcoalBlock.MODID + ":charcoal_to_charcoal_block",
+                "",
+                CharcoalBlock.MODID + ":charcoal_block_to_charcoal",
+                "");
     }
 }
