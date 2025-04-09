@@ -18,7 +18,11 @@ public class RecipeGenerator extends RecipeProvider {
 
     @Override
     protected final void buildRecipes() {
-        nineBlockStorageRecipes(RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CharcoalBlock.CHARCOAL_BLOCK_ITEM, CharcoalBlock.MODID + ":" + CharcoalBlock.NAME, "", CharcoalBlock.MODID + ":charcoal", "");
+        nineBlockStorageRecipes(RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CharcoalBlock.CHARCOAL_BLOCK_ITEM,
+                CharcoalBlock.MODID + ":charcoal_to_charcoal_block",
+                "",
+                CharcoalBlock.MODID + ":charcoal_block_to_charcoal",
+                "");
     }
 
     public static final class Runner extends RecipeProvider.Runner {

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charcoal": {
+    "has_charcoal_block": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:charcoal"
+            "items": "sbmcharcoalblock:charcoal_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sbmcharcoalblock:charcoal_block"
+        "recipe": "sbmcharcoalblock:charcoal_block_to_charcoal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_charcoal"
+      "has_charcoal_block"
     ]
   ],
   "rewards": {
     "recipes": [
-      "sbmcharcoalblock:charcoal_block"
+      "sbmcharcoalblock:charcoal_block_to_charcoal"
     ]
   }
 }
