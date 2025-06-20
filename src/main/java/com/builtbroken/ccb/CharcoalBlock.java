@@ -21,14 +21,13 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.EventBusSubscriber.Bus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-@EventBusSubscriber(modid = CharcoalBlock.MODID, bus = Bus.MOD)
+@EventBusSubscriber(modid = CharcoalBlock.MODID)
 @Mod(CharcoalBlock.MODID)
 public class CharcoalBlock
 {
