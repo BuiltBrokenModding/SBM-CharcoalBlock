@@ -2,7 +2,7 @@ package com.builtbroken.ccb;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -34,7 +34,7 @@ public class CharcoalBlock
     public static final String MODID = "sbmcharcoalblock", NAME = "charcoal_block";
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    public static final DeferredBlock<Block> CHARCOAL_BLOCK = BLOCKS.registerSimpleBlock(NAME, BlockBehaviour.Properties.of()
+    public static final DeferredBlock<Block> CHARCOAL_BLOCK = BLOCKS.registerSimpleBlock(NAME, () -> BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLACK)
             .strength(5.0F, 10.0F)
             .sound(SoundType.STONE)
@@ -47,8 +47,8 @@ public class CharcoalBlock
             return 16000;
         }
     });
-    public static final TagKey<Block> BLOCK_TAG = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MODID, NAME));
-    public static final TagKey<Item> ITEM_TAG = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MODID, NAME));
+    public static final TagKey<Block> BLOCK_TAG = BlockTags.create(Identifier.fromNamespaceAndPath(MODID, NAME));
+    public static final TagKey<Item> ITEM_TAG = ItemTags.create(Identifier.fromNamespaceAndPath(MODID, NAME));
 
     public CharcoalBlock(IEventBus modEventBus)
     {
