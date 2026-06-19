@@ -9,7 +9,7 @@ version = '1.1.4'
 group = 'sbm-charcoalblock'
 
 base {
-	archivesName = 'SBM-CharcoalBlock-26.1.1'
+	archivesName = 'SBM-CharcoalBlock-26.2'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -23,7 +23,7 @@ sourceSets.main.resources {
 }
 
 neoForge {
-	version = "26.1.1.6-beta"
+	version = "26.2.0.6-beta"
 
 	runs {
 		configureEach {

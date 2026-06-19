@@ -17,6 +17,6 @@ public class ItemTagGenerator extends BlockTagCopyingItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(CharcoalBlock.ITEM_TAG).add(CharcoalBlock.CHARCOAL_BLOCK_ITEM.get());
+        tag(CharcoalBlock.ITEM_TAG).add(CharcoalBlock.CHARCOAL_BLOCK_ITEM.getKey());
     }
 }
