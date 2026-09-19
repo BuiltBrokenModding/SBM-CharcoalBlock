@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "sbmcharcoalblock:charcoal_to_charcoal_block"
+        "recipes": "sbmcharcoalblock:charcoal_to_charcoal_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

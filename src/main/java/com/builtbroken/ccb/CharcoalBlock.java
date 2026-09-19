@@ -1,8 +1,8 @@
 package com.builtbroken.ccb;
 
-import javax.annotation.Nullable;
-
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -11,11 +11,9 @@ import net.minecraft.world.item.CreativeModeTab.TabVisibility;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.entity.FuelValues;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -39,14 +37,7 @@ public class CharcoalBlock
             .strength(5.0F, 10.0F)
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops());
-    public static final DeferredItem<BlockItem> CHARCOAL_BLOCK_ITEM = ITEMS.registerItem(NAME, p -> new BlockItem(CHARCOAL_BLOCK.get(), p.useBlockDescriptionPrefix())
-    {
-        @Override
-        public int getBurnTime(ItemStack itemBlock, @Nullable RecipeType<?> recipeType, FuelValues fuelValues)
-        {
-            return 16000;
-        }
-    });
+    public static final DeferredItem<BlockItem> CHARCOAL_BLOCK_ITEM = ITEMS.registerItem(NAME, p -> new BlockItem(CHARCOAL_BLOCK.get(), p.useBlockDescriptionPrefix().cookingFuel(ResourceKey.create(Registries.CONTEXT_INT_PROVIDER, Identifier.fromNamespaceAndPath(MODID, "cooking/time_charcoal_block")))));
     public static final TagKey<Block> BLOCK_TAG = BlockTags.create(Identifier.fromNamespaceAndPath(MODID, NAME));
     public static final TagKey<Item> ITEM_TAG = ItemTags.create(Identifier.fromNamespaceAndPath(MODID, NAME));
 
