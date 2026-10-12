@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.data.event.GatherDataRegistryEntriesEvent;
 
 @EventBusSubscriber(modid = CharcoalBlock.MODID)
 public class DataGenRegistrar {
@@ -22,11 +23,11 @@ public class DataGenRegistrar {
     @SubscribeEvent
     public static void onGatherData(GatherDataEvent.Client event) {
         event.createBlockAndItemTags(BlockTagGenerator::new, ItemTagGenerator::new);
-        event.createReloadableRegistryObjects(
-            new RegistrySetBuilder()
-                .add(RecipeProvider.asBootstrap(RecipeGenerator::new))
-                .add(Registries.LOOT_TABLE, new LootTableProvider(Set.of(), List.of(new SubProviderEntry(BlockLootTableGenerator::new, LootContextParamSets.BLOCK)))),
-            Set.of(CharcoalBlock.MODID)
-        );
+    }
+
+    @SubscribeEvent
+    public static void onGatherDataRegistryEntries(GatherDataRegistryEntriesEvent event) {
+        event.add(RecipeProvider.asBootstrap(RecipeGenerator::new));
+        event.add(Registries.LOOT_TABLE, new LootTableProvider(Set.of(), List.of(new SubProviderEntry(BlockLootTableGenerator::new, LootContextParamSets.BLOCK))));
     }
 }

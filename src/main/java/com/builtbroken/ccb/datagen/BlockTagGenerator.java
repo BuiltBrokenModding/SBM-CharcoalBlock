@@ -17,9 +17,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CharcoalBlock.CHARCOAL_BLOCK.getKey());
-        tag(BlockTags.BLOCKS_MOTION_NO_LEAVES).add(CharcoalBlock.CHARCOAL_BLOCK.getKey());
-        tag(Tags.Blocks.STORAGE_BLOCKS).add(CharcoalBlock.CHARCOAL_BLOCK.getKey());
-        tag(CharcoalBlock.BLOCK_TAG).add(CharcoalBlock.CHARCOAL_BLOCK.getKey());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(CharcoalBlock.CHARCOAL_BLOCK.key());
+        tag(BlockTags.BLOCKS_MOTION_NO_LEAVES).add(CharcoalBlock.CHARCOAL_BLOCK.key());
+        tag(Tags.Blocks.STORAGE_BLOCKS).add(CharcoalBlock.CHARCOAL_BLOCK.key());
+        tag(CharcoalBlock.BLOCK_TAG).add(CharcoalBlock.CHARCOAL_BLOCK.key());
     }
 }
